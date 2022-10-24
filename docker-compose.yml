@@ -1,0 +1,15 @@
+version: "3.9"
+
+services:
+  advanced_orm_postgres:
+      image: postgres:13.3
+      container_name: advanced_orm_postgres
+      restart: always
+      environment:
+        - POSTGRES_DB=advanced_orm_db
+        - POSTGRES_USER=user
+        - POSTGRES_PASSWORD=12345678
+      volumes:
+        - ./postgres/data:/var/lib/postgresql/data
+      ports:
+        - "5432:5432"
